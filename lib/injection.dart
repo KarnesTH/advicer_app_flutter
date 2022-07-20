@@ -26,5 +26,5 @@ Future<void> init() async {
       () => AdvicerRemoteDatasourceImplementation(client: serviceLocator()));
 
   //? Extern
-  serviceLocator.registerLazySingleton(() => http.Client);
+  serviceLocator.registerLazySingleton(() => http.Client());
 }

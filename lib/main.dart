@@ -4,6 +4,7 @@ import 'package:advicer/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'injection.dart' as dependency;
+import 'injection.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.dark,
       home: BlocProvider(
-        create: (context) => dependency.serviceLocator<AdvicerBloc>(),
+        create: (context) => serviceLocator<AdvicerBloc>(),
         child: const AdvicerPage(),
       ),
     );
