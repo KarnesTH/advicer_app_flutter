@@ -43,7 +43,7 @@ class AdvicerPage extends StatelessWidget {
                           advice: adviceState.advice,
                         );
                       } else if (adviceState is AdvicerStateError) {
-                        return const ErrorMessage();
+                        return ErrorMessage(message: adviceState.message);
                       }
                       return const Placeholder();
                     },
