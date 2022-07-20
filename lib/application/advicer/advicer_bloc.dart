@@ -10,8 +10,8 @@ part 'advicer_event.dart';
 part 'advicer_state.dart';
 
 class AdvicerBloc extends Bloc<AdvicerEvent, AdvicerState> {
-  final AdvicerUsecases usecases = AdvicerUsecases();
-  AdvicerBloc() : super(AdvicerInitial()) {
+  final AdvicerUsecases usecases;
+  AdvicerBloc({required this.usecases}) : super(AdvicerInitial()) {
     on<AdviceRequestedEvent>((event, emit) async {
       emit(AdvicerStateLoading());
 
